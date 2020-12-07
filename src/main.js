@@ -1,4 +1,4 @@
-const QUANTITY_PINS = 0;
+const QUANTITY_PINS = 7;
 import InfoTrip from "./view/info-trip-template.js";
 import NavTrip from "./view/nav-template.js";
 import FiltersTrip from "./view/trip-filters.js";

@@ -82,7 +82,7 @@ const getRandomServices = () => {
 };
 
 
-const getSumCost = (obj) => Object.values(obj.map(((it) => it.price))).reduce((a, b) => a + b);
+const getSumCost = (obj) => Object.values(obj.map(((it) => it.price))).reduce((a, b) => a + b, 0);
 
 
 const getTripDates = (dates) => {
@@ -93,11 +93,10 @@ const getTripDates = (dates) => {
 };
 
 const getTripRoute = (places) => {
-  const cities = [...new Set(places.map((place) => place.destination))];
+  const newSetOfcities = [...new Set(places)];
+  const cities = newSetOfcities.map((place) => place.destination);
 
-  return cities.length > 3 ?
-    `${cities[0]} — ... — ${cities[cities.length - 1]}` :
-    `${cities.join(` — `)}`;
+  return `${cities[0]} — ${cities[1]} — ${cities[2]}`;
 };
 
 
